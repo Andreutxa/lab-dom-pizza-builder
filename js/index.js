@@ -32,22 +32,27 @@ function renderEverything() {
   renderPrice();
 }
 
-function renderPepperoni() {
-  document.querySelectorAll('.pep').forEach(onePep => {
-    if (state.pepperoni) {
-      onePep.style.visibility = 'visible';
+
+function renderIngredients (selector, key) {
+  document.querySelectorAll(selector).forEach(ingredient => {
+    if (state[key]) {
+      ingredient.style.visibility = 'visible';
     } else {
-      onePep.style.visibility = 'hidden';
+      ingredient.style.visibility = 'hidden';
     }
   });
 }
 
+function renderPepperoni() {
+  renderIngredients ('.pep', 'pepperoni');
+}
+
 function renderMushrooms() {
-  // Iteration 1: set the visibility of `<section class="mushroom">`
+  renderIngredients ('.mushroom', 'mushrooms');
 }
 
 function renderGreenPeppers() {
-  // Iteration 1: set the visibility of `<section class="green-pepper">`
+  renderIngredients ('.green-pepper', 'greenPeppers');
 }
 
 function renderWhiteSauce() {
@@ -67,6 +72,8 @@ function renderPrice() {
 }
 
 renderEverything();
+
+
 
 // Iteration 1: Example of a click event listener on `<button class="btn btn-pepperoni">`
 document.querySelector('.btn.btn-pepperoni').addEventListener('click', () => {

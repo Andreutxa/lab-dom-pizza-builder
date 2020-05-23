@@ -72,6 +72,7 @@ function renderPrice() {
 }
 
 renderEverything();
+ddd
 
 
 

@@ -72,7 +72,7 @@ function renderWhiteSauce() {
 
 function renderGlutenFreeCrust() {
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
-  renderExtras('.crust', 'crust-gluten-free', 'glutenFreeCrust')
+  renderExtras('.crust', 'glutenFreeCrust', 'crust-gluten-free')
 }
 
 function renderButtons() {
@@ -106,5 +106,6 @@ generalClickEvent('.btn.btn-mushrooms', 'mushrooms')
 generalClickEvent('.btn.btn-green-peppers', 'greenPeppers')
 
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
-
+generalClickEvent('.btn.btn-sauce', 'whiteSauce')
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
+generalClickEvent('.btn.btn-crust', 'glutenFreeCrust')

@@ -72,19 +72,27 @@ function renderPrice() {
 }
 
 renderEverything();
-ddd
 
 
 
 // Iteration 1: Example of a click event listener on `<button class="btn btn-pepperoni">`
-document.querySelector('.btn.btn-pepperoni').addEventListener('click', () => {
-  state.pepperoni = !state.pepperoni;
-  renderEverything();
-});
+
+function generalClickEvent(button, key) {
+  document.querySelector(button).addEventListener('click', () => {
+    state[key] = !state[key];
+    renderEverything();
+  }); 
+}
+
+generalClickEvent('.btn.btn-pepperoni', 'pepperoni')
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
 
+generalClickEvent('.btn.btn-mushrooms', 'mushrooms')
+
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
+
+generalClickEvent('.btn.btn-green-peppers', 'greenPeppers')
 
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
 

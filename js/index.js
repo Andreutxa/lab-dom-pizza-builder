@@ -43,6 +43,15 @@ function renderIngredients (selector, key) {
   });
 }
 
+function renderExtras(selector, key, activeClass) {
+  const extra = document.querySelector(selector);
+  if (state[key]) {
+    extra.classList.add(activeClass)
+  } else {
+    extra.classList.remove(activeClass)
+  }
+}
+
 function renderPepperoni() {
   renderIngredients ('.pep', 'pepperoni');
 }
@@ -55,12 +64,15 @@ function renderGreenPeppers() {
   renderIngredients ('.green-pepper', 'greenPeppers');
 }
 
+
 function renderWhiteSauce() {
-  // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
+  // Iteration 2: add/remove the class “sauce-white” of `<section class=“sauce”>`
+  renderExtras('.sauce', 'whiteSauce', 'sauce-white')
 }
 
 function renderGlutenFreeCrust() {
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
+  renderExtras('.crust', 'crust-gluten-free', 'glutenFreeCrust')
 }
 
 function renderButtons() {
@@ -72,7 +84,6 @@ function renderPrice() {
 }
 
 renderEverything();
-test
 
 
 // Iteration 1: Example of a click event listener on `<button class="btn btn-pepperoni">`

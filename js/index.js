@@ -77,7 +77,23 @@ function renderGlutenFreeCrust() {
 
 function renderButtons() {
   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+  renderExtras('.btn-pepperoni', 'pepperoni', 'active')
+  renderExtras('.btn-mushrooms', 'mushrooms', 'active')
+  renderExtras('.btn-green-peppers', 'greenPeppers', 'active')
+  renderExtras('.btn-sauce', 'whiteSauce', 'active')
+  renderExtras('.btn-crust', 'glutenFreeCrust', 'active')
 }
+
+/**
+ * function renderExtras(selector, key, activeClass) {
+  const extra = document.querySelector(selector);
+  if (state[key]) {
+    extra.classList.add(activeClass)
+  } else {
+    extra.classList.remove(activeClass)
+  }
+}
+ */
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`

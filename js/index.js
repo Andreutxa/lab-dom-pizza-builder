@@ -84,19 +84,13 @@ function renderButtons() {
   renderExtras('.btn-crust', 'glutenFreeCrust', 'active')
 }
 
-/**
- * function renderExtras(selector, key, activeClass) {
-  const extra = document.querySelector(selector);
-  if (state[key]) {
-    extra.classList.add(activeClass)
-  } else {
-    extra.classList.remove(activeClass)
-  }
-}
- */
-
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+
+  const activeIngredients = Object.keys(state).filter(key => state[key]);
+  const totalPrice = activeIngredients.reduce((acc, curr) => acc + ingredients[curr].price,basePrice);
+  document.querySelector('aside strong').innerText = '$' + totalPrice ;
+
 }
 
 renderEverything();
